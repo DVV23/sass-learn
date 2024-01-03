@@ -5,6 +5,8 @@
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
     border-radius: 0.2rem;
     position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
     //putting absolute position this elements will be on on
     //another and their parent position will be position of parent element
     // 0 0 coordinate will be on top left composition element
@@ -20,5 +22,17 @@
       left: 20%;
       top: 8rem;
     }
+
+    &:hover {
+      transform: scale(1.05) translateY(0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      z-index: 20;
+      outline: 1.5rem solid $color-primary;
+      outline-offset: 2rem;
+    }
   }
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+  //.composition:hover composition__photo:not(:hover){}
 }
