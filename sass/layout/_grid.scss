@@ -1,0 +1,48 @@
+.row {
+  max-width: $grid-width;
+  //difference between width and max-width : if we have
+  // enough space for content - it`ll be width that we specified
+  //but if we have less space - than it`ll occupy available space only
+  margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+  //.row:not(:last-child) -> will select everything except last child
+  //.row:last-child -> will simply select last-child
+  @include clearfix;
+
+  [class^="col-"] {
+    float: left;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+  //[class^="col-"] -> its an attribute selector, and it`ll choose all classes which starts with "col-"
+  //*="col-"-> will select all classes which contain "col-"
+  //$="col-" -> any class that ends with "col-"
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    // #{$variable} -> sass way to work in calc func
+  }
+  .col-1-of-3 {
+    width: calc((100% - 2 *#{$gutter-horizontal}) / 3);
+  } //2 right margins and 3 blocks in row
+  .col-1-of-4 {
+    width: calc((100% - 3 *#{$gutter-horizontal}) / 4);
+  } //3 right margins and 4 blocks in row
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 *#{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+    );
+  } //2 right margins and 3 blocks in row but one block is 2/3
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - 3 *#{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
+    );
+  }
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - 3 *#{$gutter-horizontal}) / 4) + 2 *#{$gutter-horizontal}
+    );
+  }
+}

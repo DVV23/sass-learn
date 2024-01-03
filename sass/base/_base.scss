@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* border-box --> borders and paddings are no longer added 
+  to total witdth or total heigth */
+}
+
+html {
+  font-size: 62.5%;
+  /*default fontsize of browser is 16, if we will leave 10px as it was before
+  - user can not change fontsize, but leaeving it in % will allow us to keep everytying
+  in sync */
+  /* we set up root fontsize in html, so now 1rem is 10px 
+  !!! 1rem=root fontsize*/
+}
+
+body {
+  box-sizing: border-box;
+}
