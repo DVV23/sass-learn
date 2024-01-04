@@ -1,0 +1,43 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem; //to make it work in mozzila firefox
+  position: relative;
+  height: 50rem; //we defined height 2 times because of collapsed height
+  //clearfix will not work because of position absolute and it can not be fixed with pure css
+  //if we won`t specify height - perspective will be weird
+  &__side {
+    height: 50rem;
+    transition: all 0.8s ease;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 40px rgba($color-black, 0.15);
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    //.card:hover .card__side--front ->transform
+    //when we hover .card then card__side--front will transform
+    transform: rotateY(180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
