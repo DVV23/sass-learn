@@ -14,5 +14,21 @@
     url("../img/nat-4.jpg");
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
+  //clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
+  transform: skewY(
+    -7deg
+  ); // we skewed entire section, second way to make this style
+  //but now I need to skew-back boxes
+  margin-top: -10rem;
+  & > * {
+    transform: skewY(7deg);
+  } // selector of direct child, so it`ll select all childs of .section-features, in my case
+  // its .row child which i need to skew-back
+  //direct child - will select first child that it comes across
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
 }
