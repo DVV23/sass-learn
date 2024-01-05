@@ -10,6 +10,7 @@
   /* background-size: cover will try to fit image in your box whatever size or width you`ll have */
   background-position: top;
   /* background-position: top; will always keep our image pinned to top of page, bottom can be cropped but not top */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   /* clip-path: polygon(); cut image by providing coordinates where it should be visible 
     top left - top right - bottom right - bottom left (direction)*/
