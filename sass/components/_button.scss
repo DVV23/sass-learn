@@ -38,6 +38,15 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
   &::after {
     /* ::after pseudo element will be behind our element,
     but when we hover out of the button - it`ll appear
