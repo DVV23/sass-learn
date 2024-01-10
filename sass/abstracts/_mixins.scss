@@ -5,3 +5,10 @@
     clear: both; // clear both left and right floats when they collapse
   }
 }
+
+@mixin center_horizontal_vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
