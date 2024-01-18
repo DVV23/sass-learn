@@ -15,6 +15,16 @@ html {
   in sync */
   /* we set up root fontsize in html, so now 1rem is 10px 
   !!! 1rem=root fontsize*/
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  } //width <1200px?
+  @include respond(tab-port) {
+    font-size: 50%;
+  } // width <900px?
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 
 body {
